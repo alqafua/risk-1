@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شوقا | Choga - صناعة الشوكولاتة الفاخرة</title>
+<meta name="description" content="شوقا (Choga) - متجر يمني متخصص بصناعة الشوكولاتة وتقديمها بطريقة فاخرة تليق بهداياكم وكافة مناسباتكم.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf3ea;
+    --bg-alt: #f2e4d3;
+    --panel: #ffffff;
+    --text: #3b2418;
+    --text-soft: #6b4f3f;
+    --brand: #6b3d24;
+    --brand-dark: #3b2115;
+    --gold: #c08a4e;
+    --gold-soft: #e6c79c;
+    --border: rgba(59, 36, 24, 0.12);
+    --shadow: 0 20px 45px -25px rgba(59, 36, 24, 0.45);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #211510;
+      --bg-alt: #2b1c14;
+      --panel: #2c1c14;
+      --text: #f3e6d8;
+      --text-soft: #d3b79c;
+      --brand: #e6c79c;
+      --brand-dark: #f3e6d8;
+      --gold: #d9a25f;
+      --gold-soft: #8a6543;
+      --border: rgba(243, 230, 216, 0.14);
+      --shadow: 0 20px 45px -25px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #211510;
+    --bg-alt: #2b1c14;
+    --panel: #2c1c14;
+    --text: #f3e6d8;
+    --text-soft: #d3b79c;
+    --brand: #e6c79c;
+    --brand-dark: #f3e6d8;
+    --gold: #d9a25f;
+    --gold-soft: #8a6543;
+    --border: rgba(243, 230, 216, 0.14);
+    --shadow: 0 20px 45px -25px rgba(0, 0, 0, 0.6);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Tajawal', system-ui, sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 900;
+    font-size: 1.15rem;
+    text-decoration: none;
+    color: var(--brand-dark);
+  }
+
+  .brand img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 14px -6px rgba(0,0,0,.35);
+  }
+
+  nav.links {
+    display: flex;
+    gap: 28px;
+    font-weight: 500;
+    font-size: .95rem;
+  }
+
+  nav.links a {
+    text-decoration: none;
+    color: var(--text-soft);
+    transition: color .2s;
+  }
+  nav.links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand);
+    color: #fff7ee;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: .9rem;
+    box-shadow: var(--shadow);
+    transition: transform .2s;
+  }
+  .nav-cta:hover { transform: translateY(-2px); }
+
+  @media (max-width: 720px) {
+    nav.links { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 0 96px;
+    background:
+      radial-gradient(circle at 15% 20%, color-mix(in srgb, var(--gold) 18%, transparent), transparent 55%),
+      radial-gradient(circle at 85% 0%, color-mix(in srgb, var(--brand) 16%, transparent), transparent 50%);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-art { order: -1; }
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--gold);
+    background: color-mix(in srgb, var(--gold) 14%, transparent);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-family: 'Aref Ruqaa', 'Tajawal', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    line-height: 1.35;
+    margin: 0 0 18px;
+    color: var(--brand-dark);
+  }
+
+  h1 span { color: var(--gold); }
+
+  .lead {
+    font-size: 1.1rem;
+    color: var(--text-soft);
+    max-width: 46ch;
+    margin: 0 0 32px;
+  }
+
+  @media (max-width: 860px) {
+    .lead { margin-inline: auto; }
+  }
+
+  .btn-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 860px) {
+    .btn-row { justify-content: center; }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: .98rem;
+    transition: transform .2s, box-shadow .2s;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--brand));
+    color: #fff8ef;
+    box-shadow: var(--shadow);
+  }
+  .btn-primary:hover { transform: translateY(-3px); }
+
+  .btn-ghost {
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    background: var(--panel);
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-art {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-art .ring {
+    position: absolute;
+    inset: -18px;
+    border-radius: 50%;
+    border: 1.5px dashed var(--gold-soft);
+    animation: spin 40s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .hero-art img {
+    width: min(320px, 60vw);
+    height: min(320px, 60vw);
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 30px 60px -25px rgba(59,36,24,.5);
+    position: relative;
+  }
+
+  /* Section shared */
+  section { padding: 88px 0; }
+
+  .section-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 52px;
+  }
+
+  .section-head .eyebrow { margin-bottom: 16px; }
+
+  h2 {
+    font-family: 'Aref Ruqaa', 'Tajawal', serif;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    margin: 0 0 14px;
+    color: var(--brand-dark);
+  }
+
+  .section-head p {
+    color: var(--text-soft);
+    margin: 0;
+    font-size: 1.02rem;
+  }
+
+  /* About */
+  .about {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 780px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+
+  .stat-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px 26px;
+    box-shadow: var(--shadow);
+  }
+
+  .stat-card .num {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .stat-card p { margin: 0; color: var(--text-soft); font-size: .95rem; }
+
+  .about-text {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+    font-size: 1.08rem;
+    color: var(--text-soft);
+  }
+
+  /* Features */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  @media (max-width: 820px) {
+    .features-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+
+  .feature-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 32px 26px;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+  }
+
+  .feature-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    color: #fff;
+    margin-bottom: 18px;
+    font-size: 1.4rem;
+  }
+
+  .feature-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.08rem;
+    color: var(--brand-dark);
+  }
+
+  .feature-card p {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: .95rem;
+  }
+
+  /* Occasions strip */
+  .occasions {
+    background: var(--brand-dark);
+    color: #f3e6d8;
+  }
+
+  .occasions .section-head p,
+  .occasions h2 { color: #f3e6d8; }
+
+  .occasions-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .pill {
+    border: 1px solid rgba(243,230,216,.25);
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: .92rem;
+    font-weight: 500;
+  }
+
+  /* Contact */
+  .contact-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 52px;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  @media (max-width: 780px) {
+    .contact-card { grid-template-columns: 1fr; padding: 36px 24px; text-align: center; }
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  @media (max-width: 780px) {
+    .contact-links { align-items: center; }
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .contact-link .ic {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+
+  .contact-link:hover .ic { background: var(--gold-soft); }
+
+  /* Footer */
+  footer {
+    padding: 36px 0;
+    text-align: center;
+    color: var(--text-soft);
+    font-size: .88rem;
+    border-top: 1px solid var(--border);
+  }
+
+  footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets/logo.png" alt="شعار شوقا Choga">
+      شوقا <span style="color:var(--gold); font-weight:500;">Choga</span>
+    </a>
+    <nav class="links">
+      <a href="#about">عن شوقا</a>
+      <a href="#features">مميزاتنا</a>
+      <a href="#occasions">مناسباتكم</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/967781890601" target="_blank" rel="noopener">
+      واتساب
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">✨ صناعة يمنية فاخرة منذ 2024</span>
+        <h1>هنا يُصاغ <span>الطعم</span><br>بلمسةٍ فنية</h1>
+        <p class="lead">
+          شوقا (Choga) متجر يمني متخصص بصناعة الشوكولاتة وتقديمها بطريقة فاخرة
+          تليق بهداياكم وكافة مناسباتكم — من صنعاء، بحب وإتقان.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://wa.me/967781890601" target="_blank" rel="noopener">
+            اطلب عبر واتساب
+          </a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/choga.yo" target="_blank" rel="noopener">
+            تابعونا على إنستغرام
+          </a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="ring"></div>
+        <img src="assets/logo.png" alt="شوقا Choga">
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">من نحن</span>
+        <h2>قصة شوقا</h2>
+      </div>
+      <p class="about-text">
+        تأسست "شوقا" عام 2024 في صنعاء، كمتجر يمني متخصص بصناعة الشوكولاتة الفاخرة.
+        نؤمن أن الشوكولاتة أكثر من مجرد حلوى — هي لغة تعبّر عن المشاعر، لذلك نصوغ كل قطعة
+        بلمسة فنية تليق بهداياكم ومناسباتكم الخاصة، بمكونات مختارة وتقديم أنيق.
+      </p>
+      <div class="about-grid">
+        <div class="stat-card">
+          <span class="num">2024</span>
+          <p>سنة التأسيس في صنعاء، اليمن</p>
+        </div>
+        <div class="stat-card">
+          <span class="num">100%</span>
+          <p>صناعة يدوية بمكونات مختارة بعناية</p>
+        </div>
+        <div class="stat-card">
+          <span class="num">✦</span>
+          <p>تغليف فاخر يليق بجميع المناسبات</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">لماذا شوقا</span>
+        <h2>مميزاتنا</h2>
+        <p>كل تفصيلة في منتجاتنا مصمَّمة لتترك انطباعًا لا يُنسى.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>لمسة فنية</h3>
+          <p>نصوغ الطعم بتصميم وتقديم يعكسان الذوق الرفيع في كل قطعة.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🍫</div>
+          <h3>جودة فاخرة</h3>
+          <p>مكونات مختارة بعناية لنكهة غنية وقوام يذوب في الفم.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎁</div>
+          <h3>تغليف يليق بالهدايا</h3>
+          <p>تغليف أنيق يجعل من كل صندوق شوقا هدية بحد ذاتها.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💛</div>
+          <h3>صُنع بحب</h3>
+          <p>كل قطعة تُحضَّر يدويًا باهتمام بأدق التفاصيل.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>طلبات خاصة</h3>
+          <p>تصاميم وتغليف مخصص حسب طلبك ومناسبتك.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>صناعة يمنية</h3>
+          <p>منتج محلي فخور بهويته، صُنع في صنعاء بأيدٍ يمنية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="occasions" id="occasions">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">لكل مناسبة</span>
+        <h2>هدايا شوقا تناسب كل لحظة</h2>
+        <p>سواء كانت مناسبة كبيرة أو التفاتة بسيطة، عندنا الشوكولاتة المناسبة لها.</p>
+      </div>
+      <div class="occasions-row">
+        <span class="pill">أعياد الميلاد</span>
+        <span class="pill">التخرج</span>
+        <span class="pill">المناسبات الخاصة</span>
+        <span class="pill">هدايا الشركات</span>
+        <span class="pill">الأعياد والمناسبات الدينية</span>
+        <span class="pill">هدايا بلا مناسبة 💛</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">تواصل معنا</span>
+        <h2>خلونا نصمم هديتكم القادمة</h2>
+      </div>
+      <div class="contact-card">
+        <div>
+          <h3 style="margin:0 0 12px; color:var(--brand-dark); font-size:1.2rem;">
+            جاهزين نستقبل طلبكم
+          </h3>
+          <p style="color:var(--text-soft); margin:0;">
+            تواصلوا معنا عبر واتساب لطلب منتجاتكم أو الاستفسار عن الأسعار والتصاميم الخاصة،
+            أو تابعونا على إنستغرام لمتابعة كل جديد.
+          </p>
+        </div>
+        <div class="contact-links">
+          <a class="contact-link" href="https://wa.me/967781890601" target="_blank" rel="noopener">
+            <span class="ic">📱</span> +967 781 890 601
+          </a>
+          <a class="contact-link" href="https://www.instagram.com/choga.yo" target="_blank" rel="noopener">
+            <span class="ic">📷</span> instagram.com/choga.yo
+          </a>
+          <span class="contact-link" style="cursor:default;">
+            <span class="ic">📍</span> صنعاء، اليمن
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> شوقا Choga — جميع الحقوق محفوظة ·
+    <a href="https://www.instagram.com/choga.yo" target="_blank" rel="noopener">إنستغرام</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
